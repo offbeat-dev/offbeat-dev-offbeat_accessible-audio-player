@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div
+      class="audio-player"
+      data-audio-source="https://samplelib.com/lib/preview/mp3/sample-15s.mp3"
+    >
+      <audio preload="metadata"></audio>
+      <button class="audio-player__play-pause-btn" aria-label="Pause/Play">
+        <span class="cta-decorator cta-decorator--play">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+            <path
+              d="M0.563 10L0.563 0 9.438 5z"
+              fill="white"
+              transform="translate(-1222 -1163) translate(970 935) translate(236 213) translate(16 15)"
+            />
+          </svg>
+        </span>
+        <span class="cta-decorator cta-decorator--pause">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+            <path
+              d="M12 8.25v1.5H0v-1.5h12zm0-6v1.5H0v-1.5h12z"
+              fill="white"
+              transform="translate(-1617 -870) translate(1503 856) translate(114 14) rotate(90 6 6)"
+            />
+          </svg>
+        </span>
+      </button>
+      <span class="audio-player__current-time">0:00</span
+      ><span class="audio-player__current-divider">/</span
+      ><span class="audio-player__total-time">26:37</span>
+      <input
+        type="range"
+        role="slider"
+        class="audio-player__track-progress"
+        aria-label="Audio Progress"
+        aria-valuenow="0"
+        aria-valuetext="0:00/26:37"
+      />
+      <div class="audio-player__volume-control">
+        <input
+          type="range"
+          class="audio-player__volume-level"
+          role="slider"
+          max="100"
+          aria-label="Volume Control"
+        />
+        <button class="audio-player__volume-btn" aria-label="Mute/Unmute">
+          <span class="audio-player__volume-icon" style="display: inline-flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M232 416a23.88 23.88 0 0 1-14.2-4.68 8.27 8.27 0 0 1-.66-.51L125.76 336H56a24 24 0 0 1-24-24V200a24 24 0 0 1 24-24h69.75l91.37-74.81a8.27 8.27 0 0 1 .66-.51A24 24 0 0 1 256 120v272a24 24 0 0 1-24 24Zm-106.18-80Zm-.27-159.86ZM320 336a16 16 0 0 1-14.29-23.19c9.49-18.87 14.3-38 14.3-56.81 0-19.38-4.66-37.94-14.25-56.73a16 16 0 0 1 28.5-14.54C346.19 208.12 352 231.44 352 256c0 23.86-6 47.81-17.7 71.19A16 16 0 0 1 320 336Z"
+                fill="white"
+              />
+              <path
+                d="M368 384a16 16 0 0 1-13.86-24C373.05 327.09 384 299.51 384 256c0-44.17-10.93-71.56-29.82-103.94a16 16 0 0 1 27.64-16.12C402.92 172.11 416 204.81 416 256c0 50.43-13.06 83.29-34.13 120a16 16 0 0 1-13.87 8Z"
+                fill="white"
+              />
+              <path
+                d="M416 432a16 16 0 0 1-13.39-24.74C429.85 365.47 448 323.76 448 256c0-66.5-18.18-108.62-45.49-151.39a16 16 0 1 1 27-17.22C459.81 134.89 480 181.74 480 256c0 64.75-14.66 113.63-50.6 168.74A16 16 0 0 1 416 432Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+          <span class="audio-player__mute-icon" style="display: none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="none"
+                stroke="#fffff"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                stroke-width="32"
+                d="M416 432 64 80"
+              />
+              <path
+                fill="white"
+                d="M243.33 98.86a23.89 23.89 0 0 0-25.55 1.82l-.66.51-28.52 23.35a8 8 0 0 0-.59 11.85l54.33 54.33a8 8 0 0 0 13.66-5.66v-64.49a24.51 24.51 0 0 0-12.67-21.71Zm8 236.43L96.69 180.69A16 16 0 0 0 85.38 176H56a24 24 0 0 0-24 24v112a24 24 0 0 0 24 24h69.76l92 75.31a23.9 23.9 0 0 0 25.87 1.69A24.51 24.51 0 0 0 256 391.45v-44.86a16 16 0 0 0-4.67-11.3ZM352 256c0-24.56-5.81-47.87-17.75-71.27a16 16 0 1 0-28.5 14.55C315.34 218.06 320 236.62 320 256q0 4-.31 8.13a8 8 0 0 0 2.32 6.25l14.36 14.36a8 8 0 0 0 13.55-4.31A146 146 0 0 0 352 256Zm64 0c0-51.18-13.08-83.89-34.18-120.06a16 16 0 0 0-27.64 16.12C373.07 184.44 384 211.83 384 256c0 23.83-3.29 42.88-9.37 60.65a8 8 0 0 0 1.9 8.26L389 337.4a8 8 0 0 0 13.13-2.79C411 311.76 416 287.26 416 256Z"
+              />
+              <path
+                fill="white"
+                d="M480 256c0-74.25-20.19-121.11-50.51-168.61a16 16 0 1 0-27 17.22C429.82 147.38 448 189.5 448 256c0 46.19-8.43 80.27-22.43 110.53a8 8 0 0 0 1.59 9l11.92 11.92a8 8 0 0 0 12.92-2.16C471.6 344.9 480 305 480 256Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="audio-player__options">
+        <button class="audio-player__options-btn" aria-label="Mute/Unmute">
+          <span class="audio-player__options-icon">
+            <span class="audio-player__options-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 16 16"
+              >
+                <g
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <circle cx="8" cy="2.5" r=".75" />
+                  <circle cx="8" cy="8" r=".75" />
+                  <circle cx="8" cy="13.5" r=".75" />
+                </g>
+              </svg>
+            </span>
+          </span>
+        </button>
+        <div class="audio-player__options-menu">
+          <a
+            class="audio-player__download-btn"
+            href="https://www.unisys.com/siteassets/collateral/podcasts/dws/unisys-dws-40-data-driven-ocm.mp3"
+            download=""
+          >
+            Download
+            <span class="audio-player__download-icon">
+              <svg
+                viewBox="0 0 320 321"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g transform="translate(0.000000, 1.000000)">
+                  <path
+                    d="M320,278 L320,320 L0,320 L0,278 L320,278 Z M180.949981,-0.171000788 L180.949981,169.627017 L246.407656,104.169342 L276.036249,133.79275 L160,249.828999 L43.963751,133.79275 L73.5923437,104.169342 L139.050019,169.627017 L139.050019,-0.171000788 L180.949981,-0.171000788 Z"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+          </a>
+          <div class="audio-player__options-speed">
+            <span
+              id="audio-playback-speed-label"
+              class="audio-player__options-speed-label"
+              >Playback Speed</span
+            >
+            <select
+              class="audio-player__options-select"
+              aria-labelledby="audio-playback-speed-label"
+            >
+              <option value="0.75">0.75x</option>
+              <option value="1" selected="">1</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+              <option value="1.75">1.75x</option>
+              <option value="2">2x</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
